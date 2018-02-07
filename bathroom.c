@@ -137,7 +137,7 @@ void user(gender g) {
     }
 
     sleep((unsigned) rand() % WAIT_TIME);
-    printf("%d: %d done\n", gettid(), gen);
+    printf("%d done\n", gen);
     Leave();
 }
 
