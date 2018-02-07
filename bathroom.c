@@ -12,9 +12,10 @@
 
 
 #define MAX_IN_BATHROOM 3
-#define WAIT_TIME 4
+#define WAIT_TIME 10
 
 typedef enum __state {m, f, v} state;
+typedef enum __isOpen  {open, closed} open_state;
 
 typedef struct __bathroom {
     size_t num_in_bathroom;
@@ -33,10 +34,12 @@ typedef struct __bathroom {
     struct timeval temp2;
 
     state state;
+    open_state state2;
     pthread_mutex_t stateLock;
 
     sem_t maleDoor;
     sem_t femaleDoor;
+    sem_t bothLock;
 
 
 
@@ -53,6 +56,7 @@ bathroom *allocBathroom() {
     bath->total_served = 0;
     bath->waiting_male = 0;
     bath->state = v;
+    bath->state2 = open;
 
     timerclear(&bath->total_time_vacant);
     timerclear(&bath->start_time_vacant);
@@ -63,6 +67,7 @@ bathroom *allocBathroom() {
 
     sem_init(&bath->maleDoor, 0, 1);
     sem_init(&bath->femaleDoor, 0, 1);
+    sem_init(&bath->bothLock, 0, 1);
 
     pthread_mutex_init(&bath->stateLock, NULL);
 
@@ -90,6 +95,34 @@ void user(gender g) {
     state s = theBathroom->state;
 
 
+//    if (theBathroom->num_in_bathroom > MAX_IN_BATHROOM
+//    		&& theBathroom->state2 == open) {
+//    	sem_wait(&theBathroom->bothLock);
+//    	theBathroom->state2 = closed;
+//    }
+
+    if (gen == male) {
+    	theBathroom->waiting_male++;
+    	pthread_mutex_unlock(&theBathroom->stateLock);
+//		sem_wait(&theBathroom->bothLock);
+//		sem_post(&theBathroom->bothLock);
+		sem_wait(&theBathroom->maleDoor);
+		sem_post(&theBathroom->maleDoor);
+		pthread_mutex_lock(&theBathroom->stateLock);
+		theBathroom->waiting_male--;
+    }
+    else {
+    	theBathroom->waiting_female++;
+    	pthread_mutex_unlock(&theBathroom->stateLock);
+//		sem_wait(&theBathroom->bothLock);
+//		sem_post(&theBathroom->bothLock);
+		sem_wait(&theBathroom->femaleDoor);
+		sem_post(&theBathroom->femaleDoor);
+		pthread_mutex_lock(&theBathroom->stateLock);
+		theBathroom->waiting_female--;
+    }
+
+
     if (s == v) {
 
         gettimeofday(&theBathroom->start_time_occupied, NULL);
@@ -112,33 +145,19 @@ void user(gender g) {
 
         }
     } else if (gen == male) {
-        theBathroom->waiting_male++;
-        pthread_mutex_unlock(&theBathroom->stateLock);
-        sem_wait(&theBathroom->maleDoor); // wait for male door to be open
-        sem_post(&theBathroom->maleDoor); // signal other waiting men
-        pthread_mutex_lock(&theBathroom->stateLock);
+
         theBathroom->state = m;
-        theBathroom->waiting_male--;
         theBathroom->num_in_bathroom++;
         pthread_mutex_unlock(&theBathroom->stateLock);
 
     } else if (gen == female) {
-        theBathroom->waiting_female++;
-        pthread_mutex_unlock(&theBathroom->stateLock);
-        sem_wait(&theBathroom->femaleDoor);
-        sem_post(&theBathroom->femaleDoor);
-        pthread_mutex_lock(&theBathroom->stateLock);
+
         theBathroom->state = f;
-        theBathroom->waiting_female--;
         theBathroom->num_in_bathroom++;
         pthread_mutex_unlock(&theBathroom->stateLock);
-
-
     }
 
-    sleep((unsigned) rand() % WAIT_TIME);
-    printf("%d done\n", gen);
-    Leave();
+
 }
 
 
@@ -156,14 +175,24 @@ void Leave(void) {
         theBathroom->temp2 = theBathroom->total_time_occupied;
         timeradd(&theBathroom->temp2, &theBathroom->temp, &theBathroom->total_time_occupied);
 
-        printf("Vacant\n");
-        theBathroom->state = v;
 
+
+        printf("Vacant\n");
+        if (theBathroom->state == m)
+        	sem_wait(&theBathroom->maleDoor);
+        else
+        	sem_wait(&theBathroom->femaleDoor);
+//        sem_post(&theBathroom->bothLock);
+
+        theBathroom->state = v;
+//        printf("Males Waiting: %d Females Waiting: %d\n", theBathroom->waiting_male,
+//        		theBathroom->waiting_female);
         if (theBathroom->waiting_male > theBathroom->waiting_female) {
             sem_post(&theBathroom->maleDoor);
         } else {
             sem_post(&theBathroom->femaleDoor);
         }
+
 
     }
     pthread_mutex_unlock(&theBathroom->stateLock);
