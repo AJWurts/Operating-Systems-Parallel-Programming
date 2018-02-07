@@ -1,0 +1,6 @@
+Stats for Bathroom to Collect:
+-Number of usages - yes
+-time bathroom was vacant - maybe
+-total amount of time occupied - maybe
+-average queue length
+-average number of people in the bathroom at the same time
