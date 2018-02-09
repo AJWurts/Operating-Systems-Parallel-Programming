@@ -9,7 +9,8 @@
 
 #define WAIT_TIME 10
 
-pthread_t printlock;
+//pthread_t printlock;
+pthread_mutex_t randLock;
 
 typedef struct _individual_struct {
 	gender gen;
@@ -19,14 +20,14 @@ typedef struct _individual_struct {
 } individual_parameters;
 
 float randN() {
-	pthread_mutex_t lock;
-	pthread_mutex_init(&lock, NULL);
+	pthread_mutex_init(&randLock, NULL);
 	float x, y, res;
-	pthread_mutex_lock(&lock);
+	pthread_mutex_lock(&randLock);
 	x = drand48();
 	y = drand48();
+	pthread_mutex_unlock(&randLock);
 	res = sqrt(-2 * log(x)) * cos(2 * M_PI * y);
-	pthread_mutex_unlock(&lock);
+
 	return 1 + res;
 }
 
@@ -35,7 +36,6 @@ void *Individual(void *args) {
 	individual_parameters *arg = (individual_parameters*)args;
     gender gen = arg->gen;
     float rand = randN() * arg->mean_arrival_time;
-    printf("Rand1: %f", rand);
     usleep((int)rand);
 
     Enter(gen);
@@ -58,11 +58,13 @@ int main() {
     gender g[] = {male, female, male, female, male, male, male, female, female, female, male, male};
     Initialize();
 //    gender g[] = {male, male, male, male, male, male};
-    for (i = 0; i < 1; i++) {
+    for (i = 0; i < 12; i++) {
         pthread_t user_c;
-        individual_parameters args = base;
-        args.gen = g[i];
-        pthread_create(&user_c, NULL, Individual, (void*)&args);
+        individual_parameters *args = malloc(sizeof(individual_parameters));
+        *args = base;
+        args->gen = g[i];
+
+        pthread_create(&user_c, NULL, Individual, (void*)args);
         threads[i] = user_c;
     }
     for (; i >= 0; i-- ) {
