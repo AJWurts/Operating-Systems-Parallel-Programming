@@ -113,66 +113,15 @@ void updateStats() {
 }
 
 
-void user(gender g) {
-    gender gen = g;
-    pthread_mutex_lock(&theBathroom->stateLock);
-    printf("\tGen: %d\n", gen);
-    state s = theBathroom->state;
-    gettimeofday(&theBathroom->start_time_occupied, NULL);
-	timersub(&theBathroom->start_time_occupied, &theBathroom->start_time_vacant,
-			 &theBathroom->temp);
-	theBathroom->temp2 = theBathroom->total_time_vacant;
-	timeradd(&theBathroom->temp2, &theBathroom->temp, &theBathroom->total_time_vacant);
-
-    if (gen == male) {
-    	if (s == v) {
-    		theBathroom->state = m;
-
-    	} else if (s == m) {
-    	} else {
-    		theBathroom->waiting_male++;
-    		pthread_cond_wait(&theBathroom->maleEnter, &theBathroom->stateLock);
-    		theBathroom->waiting_male--;
-    	}
-    } else if (gen == female) {
-    	if (s == v) {
-    		theBathroom->state = f;
-    		pthread_cond_signal(&theBathroom->femaleEnter);
-    	} else if (s == f) {
-    		pthread_cond_signal(&theBathroom->femaleEnter);
-    	} else {
-    		theBathroom->waiting_female++;
-    		pthread_cond_wait(&theBathroom->femaleEnter, &theBathroom->stateLock);
-    		theBathroom->waiting_female--;
-    	}
-    }
-    theBathroom->num_in_bathroom++;
-    pthread_mutex_unlock(&theBathroom->stateLock);
-
-//        gettimeofday(&theBathroom->start_time_occupied, NULL);
-//        timersub(&theBathroom->start_time_occupied, &theBathroom->start_time_vacant,
-//                 &theBathroom->temp);
-//        theBathroom->temp2 = theBathroom->total_time_vacant;
-//        timeradd(&theBathroom->temp2, &theBathroom->temp, &theBathroom->total_time_vacant);
-
-
-    printf("\tExit Enter: MenW: %d, FemW: %d, Curr: %d, NumInBathroom: %d\n",
-    		theBathroom->waiting_male,
-			theBathroom->waiting_female,
-			gen,
-			theBathroom->num_in_bathroom);
-}
-
-
 
 
 void Leave(void) {
-//	printf("before lock\n");
     pthread_mutex_lock(&theBathroom->stateLock);
     theBathroom->num_in_bathroom--;
     theBathroom->total_served++;
-//    printf("In Leave\n");
-    if (theBathroom->num_in_bathroom == 0) {
+    if (theBathroom->num_in_bathroom == 0 &&
+    		(theBathroom->waiting_male == 0 || theBathroom->waiting_female == 0)) {
+
 
         gettimeofday(&theBathroom->start_time_vacant, NULL);
         timersub(&theBathroom->start_time_vacant, &theBathroom->start_time_occupied,
@@ -181,30 +130,64 @@ void Leave(void) {
         timeradd(&theBathroom->temp2, &theBathroom->temp, &theBathroom->total_time_occupied);
 
 
-
-        printf("Vacant\n");
-
         if (theBathroom->waiting_male == 0 && theBathroom->waiting_female == 0) {
         	 theBathroom->state = v;
     	} else if (theBathroom->waiting_male > theBathroom->waiting_female) {
         	theBathroom->state = m;
-        	pthread_cond_signal(&theBathroom->maleEnter);
+        	pthread_cond_broadcast(&theBathroom->maleEnter);
         } else {
         	theBathroom->state = f;
-        	pthread_cond_signal(&theBathroom->femaleEnter);
+        	pthread_cond_broadcast(&theBathroom->femaleEnter);
         }
-//        printf("After Broadcasts\n");
     }
     pthread_mutex_unlock(&theBathroom->stateLock);
-//    printf("\tExit Leave: MenW: %d, FemW: %d, NumInBathroom: %d\n",
-//        		theBathroom->waiting_male,
-//    			theBathroom->waiting_female,
-//    			theBathroom->num_in_bathroom);
+
 }
 
 void Enter(gender g) {
+	 gender gen = g;
+	pthread_mutex_lock(&theBathroom->stateLock);
+	state s = theBathroom->state;
 
-    user(g);
+
+	if (gen == male) {
+
+		if (s == v) {
+			theBathroom->state = m;
+
+		} else if (s == m) {
+		} else {
+			theBathroom->waiting_male++;
+			printf("\t\t\tMale Waiting\n");
+			pthread_cond_wait(&theBathroom->maleEnter, &theBathroom->stateLock);
+			theBathroom->waiting_male--;
+		}
+	} else if (gen == female) {
+		if (s == v) {
+			theBathroom->state = f;
+		} else if (s == f) {
+		} else {
+			theBathroom->waiting_female++;
+			printf("\t\t\tFemale Waiting\n");
+			pthread_cond_wait(&theBathroom->femaleEnter, &theBathroom->stateLock);
+			theBathroom->waiting_female--;
+		}
+	}
+	theBathroom->num_in_bathroom++;
+
+	if (theBathroom->num_in_bathroom == 1) {
+		// Timing
+		gettimeofday(&theBathroom->start_time_occupied, NULL);
+		timersub(&theBathroom->start_time_occupied, &theBathroom->start_time_vacant,
+				 &theBathroom->temp);
+		theBathroom->temp2 = theBathroom->total_time_vacant;
+		timeradd(&theBathroom->temp2, &theBathroom->temp, &theBathroom->total_time_vacant);
+	}
+	pthread_mutex_unlock(&theBathroom->stateLock);
+
+
+
+	updateStats();
 
 }
 
@@ -217,11 +200,16 @@ void Initialize(void) {
 void Finalize(void){
     printf("Statistics: \n");
     printf("Number of Users: %d\n", (unsigned)theBathroom->total_served);
-    printf("Vacancy Time: %d\n", (int)theBathroom->total_time_vacant.tv_sec +
-            (int)theBathroom->total_time_vacant.tv_usec / 1000000 );
-    printf("Occupied Time: %d\n",  (int)theBathroom->total_time_occupied.tv_sec +
-                                   (int)theBathroom->total_time_occupied.tv_usec / 1000000);
-    printf("Average Queue Length: %d\n", theBathroom->sum_in_bathroom / theBathroom->num_data_points);
-    printf("Average Number of Concurrent Users: %d\n", theBathroom->queue_size_sum / theBathroom->num_data_points);
+    printf("Vacancy Time: %f\n", (float)theBathroom->total_time_vacant.tv_sec +
+            theBathroom->total_time_vacant.tv_usec / 1000000.0 );
+    printf("Occupied Time: %f\n",  (float)theBathroom->total_time_occupied.tv_sec +
+                                   theBathroom->total_time_occupied.tv_usec / 1000000.0);
+    if (theBathroom->num_data_points > 0) {
+		printf(\
+				"Average Numer of Concurrent Users: %d\n", theBathroom->sum_in_bathroom / theBathroom->num_data_points);
+		printf("Average Amount in Queuews: %d\n", theBathroom->queue_size_sum / theBathroom->num_data_points);
+    } else  {
+    	printf("Not enough data pints to calculate averags\n");
+    }
 }
 
