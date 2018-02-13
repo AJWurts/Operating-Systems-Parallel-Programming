@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <semaphore.h>
 #include <sys/time.h>
+#include <assert.h>
 
 
 #define MAX_IN_BATHROOM 3
@@ -40,18 +41,9 @@ typedef struct __bathroom {
     open_state state2;
 
     pthread_mutex_t stateLock;
-    pthread_mutex_t femaleLock;
-    pthread_mutex_t maleLock;
-    pthread_mutex_t bothLockT;
 
     pthread_cond_t maleEnter;
     pthread_cond_t femaleEnter;
-
-    sem_t maleDoor;
-    sem_t femaleDoor;
-    sem_t bothLock;
-
-
 
 
 
@@ -79,14 +71,8 @@ bathroom *allocBathroom() {
     timerclear(&bath->temp);
     timerclear(&bath->temp2);
 
-    sem_init(&bath->maleDoor, 0, 1);
-    sem_init(&bath->femaleDoor, 0, 1);
-    sem_init(&bath->bothLock, 0, 1);
 
     pthread_mutex_init(&bath->stateLock, NULL);
-    pthread_mutex_init(&bath->maleLock, NULL);
-    pthread_mutex_init(&bath->femaleLock, NULL);
-    pthread_mutex_init(&bath->bothLockT, NULL);
 
 
     pthread_cond_init(&bath->maleEnter, NULL);
@@ -158,7 +144,7 @@ void Enter(gender g) {
 		} else if (s == m) {
 		} else {
 			theBathroom->waiting_male++;
-			printf("\t\t\tMale Waiting\n");
+
 			pthread_cond_wait(&theBathroom->maleEnter, &theBathroom->stateLock);
 			theBathroom->waiting_male--;
 		}
@@ -166,9 +152,10 @@ void Enter(gender g) {
 		if (s == v) {
 			theBathroom->state = f;
 		} else if (s == f) {
+			// Do nothing 
 		} else {
 			theBathroom->waiting_female++;
-			printf("\t\t\tFemale Waiting\n");
+
 			pthread_cond_wait(&theBathroom->femaleEnter, &theBathroom->stateLock);
 			theBathroom->waiting_female--;
 		}
@@ -183,11 +170,13 @@ void Enter(gender g) {
 		theBathroom->temp2 = theBathroom->total_time_vacant;
 		timeradd(&theBathroom->temp2, &theBathroom->temp, &theBathroom->total_time_vacant);
 	}
+	updateStats();
+	assert((gen == female && theBathroom->state == f) || (gen == male && theBathroom->state == m));
 	pthread_mutex_unlock(&theBathroom->stateLock);
 
 
 
-	updateStats();
+	
 
 }
 
@@ -207,9 +196,9 @@ void Finalize(void){
     if (theBathroom->num_data_points > 0) {
 		printf(\
 				"Average Numer of Concurrent Users: %d\n", theBathroom->sum_in_bathroom / theBathroom->num_data_points);
-		printf("Average Amount in Queuews: %d\n", theBathroom->queue_size_sum / theBathroom->num_data_points);
+		printf("Average Amount in Queues: %d\n", theBathroom->queue_size_sum / theBathroom->num_data_points);
     } else  {
-    	printf("Not enough data pints to calculate averags\n");
+    	printf("Not enough data pints to calculate averages\n");
     }
 }
 

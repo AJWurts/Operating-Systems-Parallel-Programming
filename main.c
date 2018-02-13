@@ -26,31 +26,38 @@ typedef struct _individual_struct {
 	int loop_count;
 } individual_parameters;
 
+
+// Generate random number on normal curve
+// Lock around number generation because drand48 is not thread safe
 double randN() {
 	pthread_mutex_init(&randLock, NULL);
 	double x, y, res;
 	pthread_mutex_lock(&randLock);
 	x = drand48();
 	y = drand48();
-//	printf("%f, %f\n", x, y);
 	pthread_mutex_unlock(&randLock);
 	res = sqrt(-2 * log(x)) * cos(2 * M_PI * y);
 
 	return res;
 }
 
+// Changes timeval struct to microseconds
 int toUsec(struct timeval ts) {
 	return ts.tv_sec * 1000000 +  ts.tv_usec;
 }
 
+// Changes timeval to seconds
 float toSec(struct timeval ts) {
 	return ts.tv_sec + ts.tv_usec / 1000000.0;
 }
 
 void *Individual(void *args) {
+	double arrivalTime, stayTime;
 	individual_parameters *arg = (individual_parameters*)args;
     gender gen = arg->gen;
 
+
+	// Allocate Timing Structs
     struct timeval *total_time =  malloc(sizeof(struct timeval));
     struct timeval *start_time = malloc(sizeof(struct timeval));
     struct timeval *temp2 = malloc(sizeof(struct timeval));
@@ -58,34 +65,50 @@ void *Individual(void *args) {
     struct timeval *min_time = NULL;
     struct timeval *max_time = NULL;
 
-    for (int i = 0; i < arg->loop_count; i++) {
-    	gettimeofday(start_time, NULL);
-		double rand = arg->mean_arrival_time + randN() * (arg->mean_arrival_time / 2);
-		if (rand < 0) {
-			rand = arg->mean_arrival_time;
-		}
-		usleep(rand);//(int)rand);
+	// User goes through bathroom loop_count times
+    for (int i = 0; i < arg->loop_count; i++) {	
 
-		Enter(gen);
-		rand = arg->mean_stay_time +  randN() * (arg->mean_stay_time / 2);
-		if (rand < 0) {
-			rand = arg->mean_stay_time;
+		// Generates random arrival and wait time. If less than zero sets to 0
+		// This does not maintain the normal distribution, but does not change it dramatically
+		arrivalTime = arg->mean_arrival_time + randN() * (arg->mean_arrival_time / 2);
+		if (arrivalTime < 0) {
+			arrivalTime = 0;
 		}
-		usleep(rand);//rand);
+	
+		stayTime = arg->mean_stay_time + randN() * (arg->mean_stay_time/ 2);
+		if (stayTime < 0) {
+			stayTime = 0;
+		}
+
+		// Timer start for user in bathroom
+    	gettimeofday(start_time, NULL);
+
+		usleep(arrivalTime); // User waits to enter the bathroom
+
+		Enter(gen); // User can be here for an undefined amount of time waiting to enter
+
+		usleep(stayTime); // User waits to leave bathroom
+
 		Leave();
 
 
-		gettimeofday(temp2, NULL);
+		gettimeofday(temp2, NULL); // End timer 
+
+		// Add time in bathroom to total time for average calculation later
 		timersub(temp2,start_time, temp3);
 		timeradd(temp3, total_time, temp2);
 		*total_time = *temp2;
+
+		// Updates min_time timeval struct
 		if (min_time == NULL) {
 			min_time = malloc(sizeof(struct timeval));
 			*min_time = *temp3;
 		} else if (toUsec(*temp3) < toUsec(*min_time)) {
 			*min_time = *temp3;
 		}
+	
 
+		// Updates max_time timeval struct
 		if (max_time == NULL)  {
 			 max_time = malloc(sizeof(struct timeval));
 			 *max_time = *temp3;
@@ -95,46 +118,73 @@ void *Individual(void *args) {
 
 
     }
+	
+	// Sets gender string
     char* gender = FEMALE;
     if (gen == male) {
     	gender = MALE;
     }
 
+	// Calculates total time average
     total_time->tv_sec /= arg->loop_count;
     total_time->tv_usec /= arg->loop_count;
 
-    printf("Thread %d finished. Gender: %s, Min Time: %f, Avg Time: %f, Max Time: %f\n",
+	// Prints Thread Statistics
+    printf("Thread %d finished.\n\tGender: %s,\n\tMin Time: %f, \n\tAvg Time: %f, \n\tMax Time: %f\n",
 		(int)syscall(__NR_gettid), gender, toSec(*min_time), toSec(*total_time), toSec(*max_time));
-//    free(max_time);
-//    free(min_time);
-//    free(arg);
+   
+    free(arg);
+
 	return NULL;
 }
 
-int main() {
+int main(int argc, char* argv[]) {
 	srand48(time(NULL));
-    printf("Hello, World!\n");
+	int num_users;
     individual_parameters base;
-    base.mean_arrival_time = 2000;
-    base.mean_stay_time = 20000;
-    base.loop_count = 5;
-    pthread_t *threads = (pthread_t*)malloc(sizeof(pthread_t)*100);
-    int i = 0;
-    Initialize();
-    for (i = 0; i < 100; i++) {
-        pthread_t user_c;
-        individual_parameters *args = malloc(sizeof(individual_parameters));
-        *args = base;
-        args->gen =  drand48() > 0.5;
+	pthread_attr_t *attr = (pthread_attr_t*)malloc(sizeof(pthread_attr_t));
+	pthread_attr_setstacksize(attr, 100000);
+	
+	// Retrieves program arguments
+	if (argc != 5) {
+		printf("Invalid Number of Arguments.\n\tUsage: ./bathroomSim nUsers meanLoopCount meanArrival meanStay\n");
+		printf("\tNote: meanArrival and meanStay are in microseconds\n");
+		exit(1);
+	} else {
+		num_users = atoi(argv[1]);
+		base.loop_count = atoi(argv[2]);
+		base.mean_arrival_time = atoi(argv[3]);
+		base.mean_stay_time = atoi(argv[4]);
+	}
 
-        pthread_create(&user_c, NULL, Individual, (void*)args);
+	if (base.loop_count < 1) {
+		printf("Loop count must be greater than 0\n");
+		exit(1);
+	}
+   	
+	// Allocates memory for user threads
+    pthread_t *threads = (pthread_t*)malloc(sizeof(pthread_t) * num_users);
+    
+	// Iniitalize Bathroom and create user threads
+    Initialize();
+	int i = 0;
+    for (i = 0; i < num_users; i++) {
+        pthread_t user_c;
+		// Make new parameter struct to each user so that the data is not overwritten by the next loop
+        individual_parameters *args = malloc(sizeof(individual_parameters)); 
+        *args = base;
+        args->gen =  drand48() > 0.5; // Randomly generated gender
+
+        pthread_create(&user_c, attr, Individual, (void*)args); // Create new user thread
         threads[i] = user_c;
     }
-    for (; i >= 0; i-- ) {
+	// Wait for threads to finish before finalizing
+	 for (; i >= 0; i-- ) {
         pthread_join(threads[i], NULL);
     }
     Finalize();
 
+	// Free threads and exit
     free(threads);
     return 0;
 }

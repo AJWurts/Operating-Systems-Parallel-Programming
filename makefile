@@ -1,14 +1,20 @@
-CC = cc
+GCC = gcc
 CFLAGS = -Wall -g
 LIBS = -pthread -lm
 DEPS = bathroom.h
 OBJ = bathroom.o main.o
 
 %.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(GCC) -c -o $@ $< $(CFLAGS)
         
 
-main: $(OBJ)
-	cc -o $@ $^ $(CFLAGS) $(LIBS)
+bathroomSim: $(OBJ)
+	$(GCC) -o $@ $^ $(CFLAGS) $(LIBS)
 
-all: main
+all: bathroomSim
+
+clean:
+	rm -f $(OBJ) bathroomSim
+
+run: 
+	./bathroomSim 100 5 1000 2000
