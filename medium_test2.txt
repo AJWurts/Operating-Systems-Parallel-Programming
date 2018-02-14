@@ -1,0 +1,66 @@
+Thread 21668 finished.
+	Gender: male, 
+	Loop Count: 128s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21670 finished.
+	Gender: male, 
+	Loop Count: 163s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00001000s
+Thread 21669 finished.
+	Gender: male, 
+	Loop Count: 172s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00001000s
+Thread 21666 finished.
+	Gender: female, 
+	Loop Count: 203s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00350300s, 
+	Max Time: 1.53206897s
+Thread 21665 finished.
+	Gender: female, 
+	Loop Count: 204s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00348600s, 
+	Max Time: 1.53207099s
+Thread 21671 finished.
+	Gender: female, 
+	Loop Count: 359s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00264600s, 
+	Max Time: 1.53206801s
+Thread 21663 finished.
+	Gender: male, 
+	Loop Count: 236s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00013600s, 
+	Max Time: 2.19142294s
+Thread 21664 finished.
+	Gender: female, 
+	Loop Count: 440s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00023800s, 
+	Max Time: 1.53207195s
+Thread 21672 finished.
+	Gender: female, 
+	Loop Count: 485s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00117200s, 
+	Max Time: 1.53208303s
+Thread 21667 finished.
+	Gender: male, 
+	Loop Count: 399s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00030400s, 
+	Max Time: 2.19164896s
+Statistics: 
+Number of Users: 2789
+Vacancy Time: 0.020519
+Occupied Time: 7.473847
+Average Numer of Concurrent Users: 3
+Average Amount in Queues: 2

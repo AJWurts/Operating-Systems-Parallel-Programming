@@ -16,7 +16,6 @@
 #define WAIT_TIME 10
 
 typedef enum __state {m, f, v} state;
-typedef enum __isOpen  {open, closed} open_state;
 
 typedef struct __bathroom {
     size_t num_in_bathroom;
@@ -24,7 +23,7 @@ typedef struct __bathroom {
     // Statistics
     size_t total_served;
     size_t waiting_female; // Essentially the queue
-    size_t waiting_male;
+    size_t waiting_male; // Essentially the queue for men
     size_t queue_size_sum;
     size_t sum_in_bathroom;
     size_t num_data_points;
@@ -38,10 +37,11 @@ typedef struct __bathroom {
     struct timeval temp2;
 
     state state;
-    open_state state2;
 
+	// Bathroom Data Lock
     pthread_mutex_t stateLock;
 
+	// Conditions for men or women to enter
     pthread_cond_t maleEnter;
     pthread_cond_t femaleEnter;
 
@@ -62,7 +62,6 @@ bathroom *allocBathroom() {
     bath->num_data_points = 0;
 
     bath->state = v;
-    bath->state2 = open;
 
     timerclear(&bath->total_time_vacant);
     timerclear(&bath->start_time_vacant);
@@ -82,14 +81,8 @@ bathroom *allocBathroom() {
 
 
     return bath;
-
 }
 
-
-void printToLog(char eventName[]) {
-
-    printf("%s\n", eventName );
-}
 
 // Can only run within bathroom stateLock
 void updateStats() {
@@ -97,8 +90,6 @@ void updateStats() {
 	theBathroom->queue_size_sum += theBathroom->waiting_male + theBathroom->waiting_female;
 	theBathroom->sum_in_bathroom += theBathroom->num_in_bathroom;
 }
-
-
 
 
 void Leave(void) {
@@ -115,7 +106,8 @@ void Leave(void) {
         theBathroom->temp2 = theBathroom->total_time_occupied;
         timeradd(&theBathroom->temp2, &theBathroom->temp, &theBathroom->total_time_occupied);
 
-
+		// Checks to see if anyone is waiting. If anyone is broadcasts the gender
+		// with the most people waiting.
         if (theBathroom->waiting_male == 0 && theBathroom->waiting_female == 0) {
         	 theBathroom->state = v;
     	} else if (theBathroom->waiting_male > theBathroom->waiting_female) {
@@ -171,12 +163,11 @@ void Enter(gender g) {
 		timeradd(&theBathroom->temp2, &theBathroom->temp, &theBathroom->total_time_vacant);
 	}
 	updateStats();
-	assert((gen == female && theBathroom->state == f) || (gen == male && theBathroom->state == m));
+	// IF a female reaches this point the bathroom must be female only and vice versa for males
+	// Assert statement gaurentees this is true
+	assert((gen == female && theBathroom->state == f) ||
+		  (gen == male && theBathroom->state == m));
 	pthread_mutex_unlock(&theBathroom->stateLock);
-
-
-
-	
 
 }
 

@@ -1,0 +1,1206 @@
+Thread 21872 finished.
+	Gender: female, 
+	Loop Count: 3s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21779 finished.
+	Gender: female, 
+	Loop Count: 4s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21748 finished.
+	Gender: female, 
+	Loop Count: 7s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21704 finished.
+	Gender: female, 
+	Loop Count: 16s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21832 finished.
+	Gender: female, 
+	Loop Count: 13s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21755 finished.
+	Gender: female, 
+	Loop Count: 21s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21693 finished.
+	Gender: female, 
+	Loop Count: 32s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21680 finished.
+	Gender: female, 
+	Loop Count: 63s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21798 finished.
+	Gender: female, 
+	Loop Count: 59s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000800s
+Thread 21794 finished.
+	Gender: female, 
+	Loop Count: 73s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21766 finished.
+	Gender: female, 
+	Loop Count: 81s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21761 finished.
+	Gender: female, 
+	Loop Count: 85s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21797 finished.
+	Gender: female, 
+	Loop Count: 81s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21715 finished.
+	Gender: female, 
+	Loop Count: 79s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21770 finished.
+	Gender: female, 
+	Loop Count: 82s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21685 finished.
+	Gender: female, 
+	Loop Count: 87s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21773 finished.
+	Gender: female, 
+	Loop Count: 91s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21807 finished.
+	Gender: female, 
+	Loop Count: 109s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00001000s
+Thread 21831 finished.
+	Gender: female, 
+	Loop Count: 110s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21812 finished.
+	Gender: female, 
+	Loop Count: 119s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21819 finished.
+	Gender: female, 
+	Loop Count: 119s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000600s
+Thread 21745 finished.
+	Gender: female, 
+	Loop Count: 113s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21836 finished.
+	Gender: female, 
+	Loop Count: 120s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21818 finished.
+	Gender: female, 
+	Loop Count: 126s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21865 finished.
+	Gender: female, 
+	Loop Count: 130s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21801 finished.
+	Gender: female, 
+	Loop Count: 128s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21682 finished.
+	Gender: female, 
+	Loop Count: 130s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21780 finished.
+	Gender: female, 
+	Loop Count: 130s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21858 finished.
+	Gender: female, 
+	Loop Count: 127s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21870 finished.
+	Gender: female, 
+	Loop Count: 134s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21699 finished.
+	Gender: female, 
+	Loop Count: 145s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21776 finished.
+	Gender: female, 
+	Loop Count: 147s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21701 finished.
+	Gender: female, 
+	Loop Count: 151s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21686 finished.
+	Gender: female, 
+	Loop Count: 146s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21697 finished.
+	Gender: female, 
+	Loop Count: 158s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21805 finished.
+	Gender: female, 
+	Loop Count: 158s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21829 finished.
+	Gender: female, 
+	Loop Count: 155s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21847 finished.
+	Gender: female, 
+	Loop Count: 146s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21778 finished.
+	Gender: female, 
+	Loop Count: 171s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21799 finished.
+	Gender: female, 
+	Loop Count: 166s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21802 finished.
+	Gender: female, 
+	Loop Count: 164s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000900s
+Thread 21789 finished.
+	Gender: female, 
+	Loop Count: 170s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21873 finished.
+	Gender: female, 
+	Loop Count: 164s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21842 finished.
+	Gender: female, 
+	Loop Count: 168s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21754 finished.
+	Gender: female, 
+	Loop Count: 181s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000500s
+Thread 21694 finished.
+	Gender: female, 
+	Loop Count: 184s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21772 finished.
+	Gender: female, 
+	Loop Count: 175s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21839 finished.
+	Gender: female, 
+	Loop Count: 185s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000500s
+Thread 21737 finished.
+	Gender: female, 
+	Loop Count: 179s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21868 finished.
+	Gender: female, 
+	Loop Count: 185s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21856 finished.
+	Gender: female, 
+	Loop Count: 188s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21683 finished.
+	Gender: female, 
+	Loop Count: 203s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21809 finished.
+	Gender: female, 
+	Loop Count: 200s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21844 finished.
+	Gender: female, 
+	Loop Count: 197s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21785 finished.
+	Gender: female, 
+	Loop Count: 201s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21838 finished.
+	Gender: female, 
+	Loop Count: 196s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00003200s
+Thread 21796 finished.
+	Gender: female, 
+	Loop Count: 216s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21813 finished.
+	Gender: female, 
+	Loop Count: 210s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21719 finished.
+	Gender: female, 
+	Loop Count: 210s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00001200s
+Thread 21843 finished.
+	Gender: female, 
+	Loop Count: 220s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21681 finished.
+	Gender: female, 
+	Loop Count: 209s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21852 finished.
+	Gender: female, 
+	Loop Count: 211s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21677 finished.
+	Gender: female, 
+	Loop Count: 225s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000500s
+Thread 21850 finished.
+	Gender: female, 
+	Loop Count: 227s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21711 finished.
+	Gender: female, 
+	Loop Count: 238s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21828 finished.
+	Gender: female, 
+	Loop Count: 230s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000900s
+Thread 21707 finished.
+	Gender: female, 
+	Loop Count: 228s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21764 finished.
+	Gender: female, 
+	Loop Count: 242s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21826 finished.
+	Gender: female, 
+	Loop Count: 243s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00001000s
+Thread 21734 finished.
+	Gender: female, 
+	Loop Count: 249s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21758 finished.
+	Gender: female, 
+	Loop Count: 247s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21739 finished.
+	Gender: female, 
+	Loop Count: 259s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21695 finished.
+	Gender: female, 
+	Loop Count: 251s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21732 finished.
+	Gender: female, 
+	Loop Count: 243s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00001100s
+Thread 21722 finished.
+	Gender: female, 
+	Loop Count: 255s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21700 finished.
+	Gender: female, 
+	Loop Count: 255s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21769 finished.
+	Gender: female, 
+	Loop Count: 270s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21725 finished.
+	Gender: female, 
+	Loop Count: 274s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000900s
+Thread 21759 finished.
+	Gender: female, 
+	Loop Count: 269s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00001000s
+Thread 21840 finished.
+	Gender: female, 
+	Loop Count: 279s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21688 finished.
+	Gender: female, 
+	Loop Count: 272s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00001000s
+Thread 21867 finished.
+	Gender: female, 
+	Loop Count: 277s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21821 finished.
+	Gender: female, 
+	Loop Count: 282s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21747 finished.
+	Gender: female, 
+	Loop Count: 286s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21717 finished.
+	Gender: female, 
+	Loop Count: 276s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21841 finished.
+	Gender: female, 
+	Loop Count: 287s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21771 finished.
+	Gender: female, 
+	Loop Count: 298s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21861 finished.
+	Gender: female, 
+	Loop Count: 298s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00001000s
+Thread 21777 finished.
+	Gender: female, 
+	Loop Count: 301s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21738 finished.
+	Gender: female, 
+	Loop Count: 287s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21692 finished.
+	Gender: female, 
+	Loop Count: 303s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000600s
+Thread 21736 finished.
+	Gender: female, 
+	Loop Count: 294s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21730 finished.
+	Gender: female, 
+	Loop Count: 295s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21845 finished.
+	Gender: female, 
+	Loop Count: 298s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000700s
+Thread 21817 finished.
+	Gender: female, 
+	Loop Count: 301s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000900s
+Thread 21733 finished.
+	Gender: female, 
+	Loop Count: 291s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000900s
+Thread 21703 finished.
+	Gender: female, 
+	Loop Count: 306s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21720 finished.
+	Gender: female, 
+	Loop Count: 315s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00001000s
+Thread 21855 finished.
+	Gender: female, 
+	Loop Count: 315s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21783 finished.
+	Gender: female, 
+	Loop Count: 317s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21731 finished.
+	Gender: female, 
+	Loop Count: 312s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21775 finished.
+	Gender: female, 
+	Loop Count: 315s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21866 finished.
+	Gender: male, 
+	Loop Count: 1s, 
+	Min Time: 1.02546895s, 
+	Avg Time: 1.02546895s, 
+	Max Time: 1.02546895s
+Thread 21768 finished.
+	Gender: male, 
+	Loop Count: 26s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00098600s, 
+	Max Time: 1.02563202s
+Thread 21793 finished.
+	Gender: male, 
+	Loop Count: 30s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00083800s, 
+	Max Time: 1.02516305s
+Thread 21675 finished.
+	Gender: male, 
+	Loop Count: 37s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00069400s, 
+	Max Time: 1.02568305s
+Thread 21854 finished.
+	Gender: male, 
+	Loop Count: 39s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00062800s, 
+	Max Time: 1.02452099s
+Thread 21853 finished.
+	Gender: male, 
+	Loop Count: 39s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00065400s, 
+	Max Time: 1.02551794s
+Thread 21849 finished.
+	Gender: male, 
+	Loop Count: 57s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00043800s, 
+	Max Time: 1.02498305s
+Thread 21763 finished.
+	Gender: male, 
+	Loop Count: 55s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00045000s, 
+	Max Time: 1.02476895s
+Thread 21706 finished.
+	Gender: male, 
+	Loop Count: 59s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00043600s, 
+	Max Time: 1.02571797s
+Thread 21863 finished.
+	Gender: male, 
+	Loop Count: 66s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00038200s, 
+	Max Time: 1.02524495s
+Thread 21718 finished.
+	Gender: male, 
+	Loop Count: 83s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00031400s, 
+	Max Time: 1.02606201s
+Thread 21846 finished.
+	Gender: male, 
+	Loop Count: 83s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00030100s, 
+	Max Time: 1.02503896s
+Thread 21750 finished.
+	Gender: male, 
+	Loop Count: 95s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00026300s, 
+	Max Time: 1.02503502s
+Thread 21751 finished.
+	Gender: male, 
+	Loop Count: 86s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00028800s, 
+	Max Time: 1.02476704s
+Thread 21691 finished.
+	Gender: male, 
+	Loop Count: 106s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00024200s, 
+	Max Time: 1.02571797s
+Thread 21835 finished.
+	Gender: male, 
+	Loop Count: 130s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00019700s, 
+	Max Time: 1.02563298s
+Thread 21756 finished.
+	Gender: male, 
+	Loop Count: 150s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00017100s, 
+	Max Time: 1.02568102s
+Thread 21689 finished.
+	Gender: male, 
+	Loop Count: 137s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00018200s, 
+	Max Time: 1.02503097s
+Thread 21774 finished.
+	Gender: male, 
+	Loop Count: 144s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00017800s, 
+	Max Time: 1.02571905s
+Thread 21684 finished.
+	Gender: male, 
+	Loop Count: 142s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00017800s, 
+	Max Time: 1.02534401s
+Thread 21674 finished.
+	Gender: male, 
+	Loop Count: 149s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00017100s, 
+	Max Time: 1.02558398s
+Thread 21709 finished.
+	Gender: male, 
+	Loop Count: 151s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00016800s, 
+	Max Time: 1.02542102s
+Thread 21735 finished.
+	Gender: male, 
+	Loop Count: 147s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00017100s, 
+	Max Time: 1.02524197s
+Thread 21705 finished.
+	Gender: male, 
+	Loop Count: 146s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00017000s, 
+	Max Time: 1.02482498s
+Thread 21810 finished.
+	Gender: male, 
+	Loop Count: 164s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00015300s, 
+	Max Time: 1.02514195s
+Thread 21762 finished.
+	Gender: male, 
+	Loop Count: 165s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00015800s, 
+	Max Time: 1.02605700s
+Thread 21804 finished.
+	Gender: male, 
+	Loop Count: 168s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00015000s, 
+	Max Time: 1.02520394s
+Thread 21749 finished.
+	Gender: male, 
+	Loop Count: 164s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00015000s, 
+	Max Time: 1.02471697s
+Thread 21788 finished.
+	Gender: male, 
+	Loop Count: 178s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00014100s, 
+	Max Time: 1.02510095s
+Thread 21857 finished.
+	Gender: male, 
+	Loop Count: 172s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00014600s, 
+	Max Time: 1.02510095s
+Thread 21760 finished.
+	Gender: male, 
+	Loop Count: 168s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00014900s, 
+	Max Time: 1.02509904s
+Thread 21721 finished.
+	Gender: male, 
+	Loop Count: 183s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00013900s, 
+	Max Time: 1.02542102s
+Thread 21702 finished.
+	Gender: male, 
+	Loop Count: 185s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00013300s, 
+	Max Time: 1.02457500s
+Thread 21767 finished.
+	Gender: male, 
+	Loop Count: 177s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00013800s, 
+	Max Time: 1.02451897s
+Thread 21708 finished.
+	Gender: male, 
+	Loop Count: 187s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00013700s, 
+	Max Time: 1.02572000s
+Thread 21837 finished.
+	Gender: male, 
+	Loop Count: 193s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00013300s, 
+	Max Time: 1.02568400s
+Thread 21716 finished.
+	Gender: male, 
+	Loop Count: 185s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00014100s, 
+	Max Time: 1.02606297s
+Thread 21752 finished.
+	Gender: male, 
+	Loop Count: 200s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00012400s, 
+	Max Time: 1.02492797s
+Thread 21820 finished.
+	Gender: male, 
+	Loop Count: 199s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00012500s, 
+	Max Time: 1.02487898s
+Thread 21803 finished.
+	Gender: male, 
+	Loop Count: 204s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00012500s, 
+	Max Time: 1.02563298s
+Thread 21728 finished.
+	Gender: male, 
+	Loop Count: 210s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00012000s, 
+	Max Time: 1.02533305s
+Thread 21859 finished.
+	Gender: male, 
+	Loop Count: 210s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00012000s, 
+	Max Time: 1.02521002s
+Thread 21744 finished.
+	Gender: male, 
+	Loop Count: 200s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00012400s, 
+	Max Time: 1.02487695s
+Thread 21860 finished.
+	Gender: male, 
+	Loop Count: 213s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00011500s, 
+	Max Time: 1.02457500s
+Thread 21678 finished.
+	Gender: male, 
+	Loop Count: 220s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00011900s, 
+	Max Time: 1.02632105s
+Thread 21792 finished.
+	Gender: male, 
+	Loop Count: 221s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00011200s, 
+	Max Time: 1.02477002s
+Thread 21864 finished.
+	Gender: male, 
+	Loop Count: 224s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00011100s, 
+	Max Time: 1.02488101s
+Thread 21714 finished.
+	Gender: male, 
+	Loop Count: 217s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00012000s, 
+	Max Time: 1.02606106s
+Thread 21687 finished.
+	Gender: male, 
+	Loop Count: 224s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00011400s, 
+	Max Time: 1.02571595s
+Thread 21726 finished.
+	Gender: male, 
+	Loop Count: 226s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00011300s, 
+	Max Time: 1.02572095s
+Thread 21806 finished.
+	Gender: male, 
+	Loop Count: 221s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00011200s, 
+	Max Time: 1.02471602s
+Thread 21690 finished.
+	Gender: male, 
+	Loop Count: 224s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00011600s, 
+	Max Time: 1.02605605s
+Thread 21746 finished.
+	Gender: male, 
+	Loop Count: 227s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00010900s, 
+	Max Time: 1.02487803s
+Thread 21862 finished.
+	Gender: male, 
+	Loop Count: 240s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00010300s, 
+	Max Time: 1.02477205s
+Thread 21753 finished.
+	Gender: male, 
+	Loop Count: 242s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00010500s, 
+	Max Time: 1.02558100s
+Thread 21815 finished.
+	Gender: male, 
+	Loop Count: 237s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00010700s, 
+	Max Time: 1.02546799s
+Thread 21696 finished.
+	Gender: male, 
+	Loop Count: 249s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00010100s, 
+	Max Time: 1.02520299s
+Thread 21740 finished.
+	Gender: male, 
+	Loop Count: 250s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00010200s, 
+	Max Time: 1.02567804s
+Thread 21790 finished.
+	Gender: male, 
+	Loop Count: 257s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00009700s, 
+	Max Time: 1.02514100s
+Thread 21729 finished.
+	Gender: male, 
+	Loop Count: 251s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00010400s, 
+	Max Time: 1.02605903s
+Thread 21822 finished.
+	Gender: male, 
+	Loop Count: 258s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00009600s, 
+	Max Time: 1.02481401s
+Thread 21791 finished.
+	Gender: male, 
+	Loop Count: 256s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00010000s, 
+	Max Time: 1.02568305s
+Thread 21710 finished.
+	Gender: male, 
+	Loop Count: 255s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00009800s, 
+	Max Time: 1.02509797s
+Thread 21833 finished.
+	Gender: male, 
+	Loop Count: 261s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00009500s, 
+	Max Time: 1.02492499s
+Thread 21765 finished.
+	Gender: male, 
+	Loop Count: 249s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00010000s, 
+	Max Time: 1.02487803s
+Thread 21871 finished.
+	Gender: male, 
+	Loop Count: 272s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00009100s, 
+	Max Time: 1.02481103s
+Thread 21724 finished.
+	Gender: male, 
+	Loop Count: 257s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00009600s, 
+	Max Time: 1.02477002s
+Thread 21848 finished.
+	Gender: male, 
+	Loop Count: 282s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00008900s, 
+	Max Time: 1.02520895s
+Thread 21712 finished.
+	Gender: male, 
+	Loop Count: 286s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00008700s, 
+	Max Time: 1.02503300s
+Thread 21727 finished.
+	Gender: male, 
+	Loop Count: 276s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00009300s, 
+	Max Time: 1.02572298s
+Thread 21824 finished.
+	Gender: male, 
+	Loop Count: 286s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00008800s, 
+	Max Time: 1.02524304s
+Thread 21814 finished.
+	Gender: male, 
+	Loop Count: 278s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00008800s, 
+	Max Time: 1.02445400s
+Thread 21723 finished.
+	Gender: male, 
+	Loop Count: 296s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00008500s, 
+	Max Time: 1.02514005s
+Thread 21808 finished.
+	Gender: male, 
+	Loop Count: 305s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00008200s, 
+	Max Time: 1.02498102s
+Thread 21795 finished.
+	Gender: male, 
+	Loop Count: 302s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00008100s, 
+	Max Time: 1.02452099s
+Thread 21713 finished.
+	Gender: male, 
+	Loop Count: 322s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00007800s, 
+	Max Time: 1.02524102s
+Thread 21816 finished.
+	Gender: male, 
+	Loop Count: 309s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00008200s, 
+	Max Time: 1.02531898s
+Thread 21743 finished.
+	Gender: male, 
+	Loop Count: 316s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00007900s, 
+	Max Time: 1.02520299s
+Thread 21823 finished.
+	Gender: male, 
+	Loop Count: 322s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00007700s, 
+	Max Time: 1.02503598s
+Thread 21698 finished.
+	Gender: male, 
+	Loop Count: 330s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00007400s, 
+	Max Time: 1.02451706s
+Thread 21781 finished.
+	Gender: male, 
+	Loop Count: 331s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00007600s, 
+	Max Time: 1.02532899s
+Thread 21811 finished.
+	Gender: male, 
+	Loop Count: 343s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00007300s, 
+	Max Time: 1.02520597s
+Thread 21834 finished.
+	Gender: male, 
+	Loop Count: 362s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00007000s, 
+	Max Time: 1.02551603s
+Thread 21679 finished.
+	Gender: male, 
+	Loop Count: 367s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00007000s, 
+	Max Time: 1.02563298s
+Thread 21757 finished.
+	Gender: male, 
+	Loop Count: 383s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00006600s, 
+	Max Time: 1.02546597s
+Thread 21825 finished.
+	Gender: male, 
+	Loop Count: 382s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00006600s, 
+	Max Time: 1.02542198s
+Thread 21851 finished.
+	Gender: male, 
+	Loop Count: 400s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00006200s, 
+	Max Time: 1.02477205s
+Thread 21742 finished.
+	Gender: male, 
+	Loop Count: 419s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00015100s, 
+	Max Time: 1.02567995s
+Thread 21830 finished.
+	Gender: male, 
+	Loop Count: 416s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00015200s, 
+	Max Time: 1.02520704s
+Thread 21676 finished.
+	Gender: female, 
+	Loop Count: 359s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00089900s, 
+	Max Time: 1.27971995s
+Thread 21869 finished.
+	Gender: female, 
+	Loop Count: 370s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00087400s, 
+	Max Time: 1.28036594s
+Thread 21741 finished.
+	Gender: female, 
+	Loop Count: 414s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00094100s, 
+	Max Time: 1.28023303s
+Thread 21782 finished.
+	Gender: female, 
+	Loop Count: 419s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00096000s, 
+	Max Time: 1.27959800s
+Thread 21800 finished.
+	Gender: male, 
+	Loop Count: 447s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00077400s, 
+	Max Time: 1.02524102s
+Thread 21786 finished.
+	Gender: female, 
+	Loop Count: 439s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00107100s, 
+	Max Time: 1.27979195s
+Thread 21784 finished.
+	Gender: male, 
+	Loop Count: 474s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00078300s, 
+	Max Time: 1.02423096s
+Thread 21827 finished.
+	Gender: male, 
+	Loop Count: 499s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00076800s, 
+	Max Time: 1.02503800s
+Thread 21787 finished.
+	Gender: female, 
+	Loop Count: 484s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00102900s, 
+	Max Time: 1.27995002s
+Statistics: 
+Number of Users: 41880
+Vacancy Time: 0.052090
+Occupied Time: 3.033342
+Average Numer of Concurrent Users: 48
+Average Amount in Queues: 49

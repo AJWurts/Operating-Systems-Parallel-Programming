@@ -29,7 +29,7 @@ typedef struct _individual_struct {
 
 // Generate random number on normal curve
 // Lock around number generation because drand48 is not thread safe
-double randN() {
+double randN(int mean) {
 	pthread_mutex_init(&randLock, NULL);
 	double x, y, res;
 	pthread_mutex_lock(&randLock);
@@ -38,17 +38,17 @@ double randN() {
 	pthread_mutex_unlock(&randLock);
 	res = sqrt(-2 * log(x)) * cos(2 * M_PI * y);
 
-	return res;
+	return (double)mean + res * ((double)mean / 2.0);
 }
 
 // Changes timeval struct to microseconds
-int toUsec(struct timeval ts) {
+long toUsec(struct timeval ts) {
 	return ts.tv_sec * 1000000 +  ts.tv_usec;
 }
 
 // Changes timeval to seconds
 float toSec(struct timeval ts) {
-	return ts.tv_sec + ts.tv_usec / 1000000.0;
+	return (float)ts.tv_sec + ts.tv_usec / 1000000.0;
 }
 
 void *Individual(void *args) {
@@ -70,51 +70,54 @@ void *Individual(void *args) {
 
 		// Generates random arrival and wait time. If less than zero sets to 0
 		// This does not maintain the normal distribution, but does not change it dramatically
-		arrivalTime = arg->mean_arrival_time + randN() * (arg->mean_arrival_time / 2);
+		arrivalTime = randN(arg->mean_arrival_time);
 		if (arrivalTime < 0) {
 			arrivalTime = 0;
 		}
 	
-		stayTime = arg->mean_stay_time + randN() * (arg->mean_stay_time/ 2);
+		stayTime = randN(arg->mean_stay_time);
 		if (stayTime < 0) {
 			stayTime = 0;
 		}
 
 		// Timer start for user in bathroom
-    	gettimeofday(start_time, NULL);
+    	
 
-		usleep(arrivalTime); // User waits to enter the bathroom
-
+		usleep(arrivalTime); // waits until user arrives at bathroom
+		gettimeofday(start_time, NULL);	
 		Enter(gen); // User can be here for an undefined amount of time waiting to enter
-
+		gettimeofday(temp2, NULL); // End timer 
 		usleep(stayTime); // User waits to leave bathroom
 
 		Leave();
 
 
-		gettimeofday(temp2, NULL); // End timer 
+		
 
 		// Add time in bathroom to total time for average calculation later
-		timersub(temp2,start_time, temp3);
+		timersub(temp2, start_time, temp3);
 		timeradd(temp3, total_time, temp2);
 		*total_time = *temp2;
+		
 
 		// Updates min_time timeval struct
 		if (min_time == NULL) {
 			min_time = malloc(sizeof(struct timeval));
 			*min_time = *temp3;
 		} else if (toUsec(*temp3) < toUsec(*min_time)) {
+			
 			*min_time = *temp3;
-		}
+		} 
 	
 
 		// Updates max_time timeval struct
 		if (max_time == NULL)  {
 			 max_time = malloc(sizeof(struct timeval));
 			 *max_time = *temp3;
-		} else if (toUsec(*temp3) < toUsec(*max_time)) {
+		} else if (toUsec(*temp3) > toUsec(*max_time)) {
+			
 			*max_time = *temp3;
-		}
+		} 
 
 
     }
@@ -130,9 +133,11 @@ void *Individual(void *args) {
     total_time->tv_usec /= arg->loop_count;
 
 	// Prints Thread Statistics
-    printf("Thread %d finished.\n\tGender: %s,\n\tMin Time: %f, \n\tAvg Time: %f, \n\tMax Time: %f\n",
-		(int)syscall(__NR_gettid), gender, toSec(*min_time), toSec(*total_time), toSec(*max_time));
-   
+
+    printf("Thread %d finished.\n\tGender: %s, \n\tLoop Count: %ds, \n\tMin Time: %.8fs, \n\tAvg Time: %.8fs, \n\tMax Time: %.8fs\n",
+		(int)syscall(__NR_gettid), gender, arg->loop_count, toSec(*min_time), toSec(*total_time), toSec(*max_time));
+
+
     free(arg);
 
 	return NULL;
@@ -143,7 +148,7 @@ int main(int argc, char* argv[]) {
 	int num_users;
     individual_parameters base;
 	pthread_attr_t *attr = (pthread_attr_t*)malloc(sizeof(pthread_attr_t));
-	pthread_attr_setstacksize(attr, 100000);
+	pthread_attr_setstacksize(attr, 50000);
 	
 	// Retrieves program arguments
 	if (argc != 5) {
@@ -164,6 +169,7 @@ int main(int argc, char* argv[]) {
    	
 	// Allocates memory for user threads
     pthread_t *threads = (pthread_t*)malloc(sizeof(pthread_t) * num_users);
+
     
 	// Iniitalize Bathroom and create user threads
     Initialize();
@@ -174,13 +180,19 @@ int main(int argc, char* argv[]) {
         individual_parameters *args = malloc(sizeof(individual_parameters)); 
         *args = base;
         args->gen =  drand48() > 0.5; // Randomly generated gender
+		args->loop_count = (int)randN(base.loop_count);
+		if (args->loop_count < 1) {
+			args->loop_count = base.loop_count;
+		}
+
+
 
         pthread_create(&user_c, attr, Individual, (void*)args); // Create new user thread
         threads[i] = user_c;
     }
 	// Wait for threads to finish before finalizing
-	 for (; i >= 0; i-- ) {
-        pthread_join(threads[i], NULL);
+	 while (i > 0) {	
+    	pthread_join(threads[--i], NULL);
     }
     Finalize();
 

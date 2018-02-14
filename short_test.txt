@@ -1,0 +1,36 @@
+Thread 21875 finished.
+	Gender: female, 
+	Loop Count: 7s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21879 finished.
+	Gender: female, 
+	Loop Count: 7s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21878 finished.
+	Gender: female, 
+	Loop Count: 12s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21876 finished.
+	Gender: female, 
+	Loop Count: 15s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Thread 21877 finished.
+	Gender: female, 
+	Loop Count: 17s, 
+	Min Time: 0.00000000s, 
+	Avg Time: 0.00000000s, 
+	Max Time: 0.00000100s
+Statistics: 
+Number of Users: 58
+Vacancy Time: 0.001426
+Occupied Time: 0.004089
+Average Numer of Concurrent Users: 2
+Average Amount in Queues: 0
